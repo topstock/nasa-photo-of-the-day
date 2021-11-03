@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Card from "Card";
+import Card from "./Card";
+import Header from "./Header";
 import axios from "axios";
-import URL_WITH_KEY from "''"
+import {URL_WITH_KEY} from "../constants/constants";
 function App() {
   const [photoDate, setPhotoDate] = useState("2000-01-01");
   const [photoInfo, setPhotoInfo] = useState({});
@@ -22,20 +23,18 @@ function App() {
 
   return (
     <div className="App">
+      
       <Header 
         photoDate={photoDate} 
         setPhotoDate={photoDate}
+          
+      />
+      
+      <Card 
         photoInfo={photoInfo} 
         setPhotoInfo={setPhotoInfo} 
-        
       />
-      <>
-        <Card />
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
-      </>
+    
     </div>
   )
 }
