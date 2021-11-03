@@ -1,7 +1,8 @@
 import React from "react";
 
-export default function Card() {
+export default function Card({photoInfo}) {
     return(
-        <div>Card</div>
+
+        <div>{console.log(photoInfo.url)}</div>
     )
 }
