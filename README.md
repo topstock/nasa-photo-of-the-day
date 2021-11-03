@@ -35,8 +35,7 @@ This project was put together using create-react-app (CRA). You will not need to
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [ ] Push commits: `git push origin <firstName-lastName>`.
 
-axios.get(`https://api.nasa.gov/planetary/apod?start_date=1985-04-18& end_date=1985-04-19`)
-axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
+
 
 ### Task 2: MVP
 
