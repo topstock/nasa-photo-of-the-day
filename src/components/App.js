@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Card from "Card";
-import SearchBar from "SearchBar";
-
-
+import axios from "axios";
+import URL_WITH_KEY from "''"
 function App() {
+  const [photoDate, setPhotoDate] = useState("2000-01-01");
+  const [photoInfo, setPhotoInfo] = useState({});
+ 
+  const searchDate = date => {
+    setPhotoDate(date)
+  }
+
+  useEffect(() => {
+    axios.get(`${URL_WITH_KEY}&${photoDate}`)
+      .then( res => {
+        console.log(res.data)
+        setPhotoInfo(res.data);
+      })
+      .catch(err => console.error(err))
+    }, [])
+
   return (
     <div className="App">
+      <Header 
+        photoDate={photoDate} 
+        setPhotoDate={photoDate}
+        photoInfo={photoInfo} 
+        setPhotoInfo={setPhotoInfo} 
+        
+      />
       <>
-      <div>
-        <h1>Space Photos Sourced from NASA</h1>
-        {/*<SearchBar />*/}
-      </div>
         <Card />
       <p>
         Read through the instructions in the README.md file to build your NASA
@@ -19,7 +37,7 @@ function App() {
       </p>
       </>
     </div>
-  );
+  )
 }
 
 export default App;
