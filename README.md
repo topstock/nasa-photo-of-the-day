@@ -85,7 +85,6 @@ Now is the time to build out your other components. Compose your UI, and then pa
 
 - You may run into an error where your components try to access object properties before your data is finished being fetched - ie. `Cannot read property 'url' of undefined`. This means that the data you passed as props is undefined, when you were expecting it to be an object. You can fix this by simply adding something like this to any component that needs to read data from your state object:
 
-```js
 // Display a loading message while the data is fetching
 if (!props.photoOfTheDay) return <h3>Loading...</h3>;
 

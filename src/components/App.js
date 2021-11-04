@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Card from "./Card";
 import Header from "./Header";
+import Article from "./Article";
 import axios from "axios";
 import {URL_WITH_KEY} from "../constants/constants";
 function App() {
@@ -29,10 +30,10 @@ function App() {
         searchDate={searchDate}
       />
       
-      <Card 
-        photoInfo={photoInfo} 
-      />
-    
+      <Card photoInfo={photoInfo} />
+
+      <Article explanation={photoInfo.explanation} />
+
     </div>
   )
 }

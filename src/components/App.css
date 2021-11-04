@@ -15,17 +15,27 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.SearchBar {
+  display: flex;
+  flex-direction: row;
+}
 
 .App-link {
   color: #61dafb;
+}
+
+
+.Header-image {
+  height: 5vw;
+  width: 5vw;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +46,4 @@
     transform: rotate(360deg);
   }
 }
+
