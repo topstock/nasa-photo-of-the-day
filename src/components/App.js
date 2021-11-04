@@ -11,7 +11,7 @@ function App() {
   const searchDate = date => {
     setPhotoDate(date)
   }
-/*
+
   useEffect(() => {
     axios.get(`${URL_WITH_KEY}&date=${photoDate}`)
       .then( res => {
@@ -20,13 +20,13 @@ function App() {
       })
       .catch(err => console.error(err))
     }, [photoDate])
-*/
+
   return (
     <div className="App">
       
       <Header 
         photoDate={photoDate} 
-        setPhotoDate={photoDate}
+        searchDate={searchDate}
       />
       
       <Card 
