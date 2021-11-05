@@ -6,33 +6,20 @@ import axios from "axios";
 import {URL_WITH_KEY} from "../constants/constants";
 import styled from "styled-components";
 
-const StyledApp = styled.app`
-.App {
-  text-align: center;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+const StyledApp = styled.div`
+  .App {
+    text-align: center;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.SearchBar {
-  display: flex;
-  flex-direction: row;
-}
-
-
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 `
 
-function App() {
+const App = () => {
   const [photoDate, setPhotoDate] = useState("2000-01-01");
   const [photoInfo, setPhotoInfo] = useState({});
  
@@ -43,6 +30,7 @@ function App() {
   useEffect(() => {
     axios.get(`${URL_WITH_KEY}&date=${photoDate}`)
       .then( res => {
+        console.log(res);
         setPhotoInfo(res.data);
       })
       .catch(err => console.error(err))
@@ -64,4 +52,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
